@@ -86,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HOTEL.wsgi.application'
+WSGI_APPLICATION = 'HOTEL.wsgi:application'
 
 
 # Database
