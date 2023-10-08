@@ -1,0 +1,135 @@
+<!-- index.html -->
+{% extends 'base.html' %}   <!-- 繼承base.html -->
+{% load static %}
+{% block title %} 
+    誠意酒店– Chéngyì Hotel
+{% endblock %}
+
+{% block content %}
+<section id="second">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h3>全台討論度最高的酒店-誠意酒店即將開幕！</h3>
+                <div class='row'>
+                    <div class='col-md-4 text-center'>
+                        <img src="{% static 'img/bot.png' %}" class="d-block" style="width:100%">
+                        <h5>Chéngyì小編</h5>
+                    </div>
+                    <div class='col-md-8 text-left'>
+                        <p class='lead'>要挑戰台灣最美無邊際泳池寶座</p>
+                        <p>斥資近10億元，台灣首見的城市度假主題的酒店形式，帶你用全新視角看港都。</p>
+                        <p>山煙渺渺的水庫湖景無限延伸，夜晚，欣賞如梵谷名畫「隆河上的星空」般的夜色，享受極致的舒適與自然恬靜的愜意悠閒</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--相片的區塊-->
+<section id='latest'>       
+    <div class="container">
+        <div class='row'>
+            <div class='col-md-12 text-center'>
+                <h3>房型介紹</h3>
+                <div class='row'>
+                    <!--第1張相片-->
+                    <div class='col-md-4 text-left'>
+                        <div class='outer'>
+                            <a href="{% url 'booking' room_type='經典和式雙人床' %}">
+                                
+                                <div class='upper'>
+                                    <img src="{% static 'img/room-01.jpg' %}"  class="d-block" style="width:100%">
+                                </div>
+                                <div class='lower'>
+                                    <h3>經典和式雙人床</h3>
+                                    <span>尚有空房</span>
+                                    <h4>優惠價3,500元/晚</h4>
+                                    <span><i class="fas fa-map-marker-alt"></i> 高雄市楠梓區</span><br>
+                                    <span><i class="far fa-clock"></i> Nov 03, 2022 08:00PM</span>
+                                </div>                                              
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <!--第2張相片-->
+                    <div class='col-md-4 text-left'>
+                        <div class='outer'>
+                            <a href='{% url 'booking' room_type='豪華海景房' %}'>
+                                <div class='upper'>
+                                    <img src="{% static 'img/room-02.jpg' %}" class="d-block" style="width:100%">
+                                </div>
+                                <div class='lower'>
+                                    <h3>豪華海景房</h3>
+                                    <span>尚有空房</span>
+                                    <h4>優惠價2,500元/晚</h4>
+                                    <span><i class="fas fa-map-marker-alt"></i> 高雄市楠梓區</span><br>
+                                    <span><i class="far fa-clock"></i> Nov 03, 2022 08:00PM</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--第3張相片-->
+                    <div class='col-md-4 text-left'>
+                        <div class='outer'>
+                            <a href='{% url 'booking' room_type='尊爵高樓海景套房' %}'>
+                                <div class='upper'>
+                                    <img src="{% static 'img/room-03.jpg' %}" class="d-block" style="width:100%">
+                                </div>
+                                <div class='lower'>
+                                    <h3>尊爵高樓海景套房</h3>
+                                    <span>會員專屬</span>
+                                    <h4>費用請洽現場服務人員</h4>
+                                    <span><i class="fas fa-map-marker-alt"></i> 高雄市楠梓區</span><br>
+                                    <span><i class="far fa-clock"></i> Nov 03, 2022 08:00PM</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--形象廣告banner輪播-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'img/banner-01.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>SPRING庭宴會廳</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/banner-02.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>360度高空池畔酒吧</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/banner-03.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>高空懸挑無邊際泳池</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endblock %}

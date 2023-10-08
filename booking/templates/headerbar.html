@@ -1,0 +1,42 @@
+<!--header.html-->
+{% load static %}
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">誠意酒店</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="https://lin.ee/XpaDzGD">聊天機器人</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://liff.line.me/1654883656-XqwKRkd4?aid=875zzpvg&utm_source=LINE&utm_medium=ClientOA&utm_campaign=Richmenu">集點卡</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'enhanced' %}">加值服務</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://lin.ee/gXfrl0X">專人客服</a>
+            </li>
+            </ul>
+            <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<section id="intro">
+    <div class="container-fluid bg-light p-5">
+        <div class="container">
+            <div class="col-md-12">
+                <h1 class="display-4">全球唯一高空懸挑無邊際泳池、360度環景酒吧！</h1>
+                <p class="lead">台灣「誠意酒店」6大亮點曝光，池畔酒吧還能港灣夕陽</p>
+                <!-- <a class="btn btn-primary btn-lg" href="#" role="button">立即訂房</a> -->
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>房間搜索</title>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <h3 style="margin-left: 1em;">輸入條件為您搜索房間:</h3>
+    </div>
+    <div class="row" style="margin: 10px">
+        <div class="col-12" style="margin: 10px">
+            <label>進房日期</label>
+            <input type="date" id="FromDate" value="" class="form-control" />
+            <br />
+            <label>退房日期</label>
+            <input type="date" id="ToDate" value="" class="form-control" />
+            <br />
+            <label>人數</label>
+            <input type="number" id="pcount" class="form-control" />
+            <br />
+            <button class="btn btn-warning btn-block" id="sure">提交</button>
+        </div>
+    </div>
+    <script>
+        function initializeApp(data) {  //初始化LIFF
+            alert('initalizeapp');
+            var userid = data.context.userId;  //取得ID
+        }
+    
+        function pushMsg(start, end, count) {
+            if (start == '' || end == '' || count == '') {  //資料檢查
+                alert('每個項目都必須輸入！');
+                return;
+            }
+            var date = new Date(); 
+            date.setDate(date.getDate()-1)
+            var sdate = new Date(start);
+            var edate = new Date(end);
+            if (date>sdate) {
+                alert('日期輸入錯誤 : 進房日期已過');
+                return;
+            }
+            if (sdate>=edate) {
+                alert('日期輸入錯誤 : 進房日期比退房日期晚或同一天');
+                return;
+            }
+
+            var msg = "[SearchRoom]{from:" + start + ",to:" + end + ",pcount:" + count + "}";  //回傳訊息字串
+    
+            liff.sendMessages([  //推播訊息
+                { type: 'text',
+                  text: msg
+                }
+            ]).then(() => {
+                    liff.closeWindow();  //關閉視窗
+                });
+        }
+    
+        $(document).ready(function () {
+            console.log('document ready');
+            liff.init({
+                liffId: '1657480937-b6p5YA96'
+            }).then(() => {
+                console.log('liff inital done');
+            });
+            
+            $('#sure').click(function (e) {  //按下確定鈕
+                pushMsg($('#FromDate').val(), $('#ToDate').val(), $('#pcount').val());
+            });
+        });
+    </script>
+</body>
+</html>

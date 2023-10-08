@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>條碼掃描</title>
+        <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    </head>
+    <body>
+        <!-- 條碼顯示的內容顯示在 qr-reader-results -->
+        <div id="qr-reader-results"><h1 id="qrtext"></h1></div>
+        <!-- 掃描用 -->
+        <div id="qr-reader" style="width:100%"></div>    
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.0.3/html5-qrcode.min.js"></script>
+    <script>
+        const liff_Id = '1657480937-9dK2QgZO'
+        // $(document).ready(function () {
+        //     console.log('document ready');
+        //     liff.init({
+        //         liffId: '1657480937-9dK2QgZO'
+        //     }).then(() => {
+        //         console.log('liff inital done');
+        //     });
+        // });
+        
+        // <!-- 呼叫 html5qrcode 代入qr-reader -->
+        const html5QrCode = new Html5Qrcode("qr-reader");
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+            /* 處理成功掃描 */  
+            document.getElementById("qrtext").innerHTML = decodedText;
+            html5QrCode.clear();
+            
+            liff.sendMessages(
+                [  //推播訊息
+                    { 
+                        type: 'text',
+                        text: "[IDScanResult]:" + decodedText
+                    }
+                ]
+            ).then(() => {
+                liff.closeWindow();  //關閉視窗
+                
+            });
+        };
+        const config = { fps: 10, qrbox: 800 };
+        
+        liff.init({
+                liffId: liff_Id
+        }).then(() => {
+            console.log('liff inital done');
+        });
+
+        html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+        
+        console.log('start scan');
+    </script>
+    <!-- <script>
+
+        function pushMsg(decodedText, decodedResult) {
+            console.log('Scan Result = '+decodedText);
+            
+            var msg = "[IDScanResult]:" + decodedText;  //回傳訊息字串
+
+            liff.sendMessages([  //推播訊息
+                { 
+                    type: 'text',
+                    text: msg
+                }
+            ]).then(() => {
+                    html5QrCode.clear();
+                    liff.closeWindow();  //關閉視窗
+                });
+        }
+
+        $(document).ready(function () {
+            console.log('document ready');
+            liff.init({
+                liffId: '1657480937-9dK2QgZO'
+            }).then(() => {
+                console.log('liff inital done');
+            });
+        });
+
+        // 呼叫 html5qrcode 代入qr-reader
+        const html5QrCode = new Html5Qrcode("qr-reader");
+
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+            /* 處理成功掃描 */  
+            document.getElementById("qrtext").innerHTML = decodedText;
+            if (decodedText.toUpperCase().startsWith("SMSTO:1922:")) {
+                var t = decodedText.split(":", 3),
+                r= t[1],
+                a= t[2],
+                o = "sms:" + r + "&body=" + a; // to-do 如果是android 要將&改為?
+                window.location.href = o;
+            }
+            html5QrCode.clear();
+        };
+
+        const config = { fps: 10, qrbox: 800 };
+
+        html5QrCode.start({ facingMode: "environment" }, config, pushMsg);
+    </script> -->
+</html>

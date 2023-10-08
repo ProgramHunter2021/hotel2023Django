@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} 預約-Step1 {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class='col-md-8'>
+            <div class='outer'>
+                <div class='upper'>
+                    <img src="{{rt.rt_image}}"  class="d-block" style="width:50%">
+                </div>
+                <div class='lower'>
+                    <h3>{{rt.rt_name}}</h3>
+                </div>        
+            </div>
+        </div> 
+        <form method="POST" action="">
+            {% csrf_token %}
+                <div class="form-group col-md-8">            
+                    ＜ 入住日期 ＞  
+                    <input type="date" id="checkInDate" onload=getToday() name="checkInDate" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('必填欄位')">          
+                </div>
+                <div class="form-group col-md-8">    
+                    ＜ 退房日期 ＞  
+                    <input type="date" id="checkOutDate" onload=getTomorrow() name="checkOutDate" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('必填欄位')">
+                </div>
+                <div class="form-group col-md-4" for="quest_name">姓名：
+                    <div class="form-group col-md-4">
+                        <input type="text" id="quest_name" name="quest_name" size="10" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('必填欄位')">
+                    </div> 
+                </div>
+                <div class="form-group col-md-4" for="phone_num">連絡電話：</div>
+                    <div class="form-group col-md-4">
+                        <input type="text" id="phone_num" name="phone_num" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('必填欄位')">
+                    </div>
+                
+                <div class="form-group col-md-8" for="address">連絡地址：
+                    <div class="form-group col-md-8">
+                        <input type="text" id="address" name="address" size="70" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('必填欄位')">
+                    </div>
+                </div><br/>        
+                <input type="submit" name="submit" id="submit" value="送出" />
+                <input type="reset" name="reset" id="reset" value="重填" />
+        </form>
+    </div>
+</div> 
+{% endblock %}

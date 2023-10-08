@@ -1,0 +1,110 @@
+<!--base.html-->
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title%} {% endblock %}</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.svg" />
+
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/LineIcons.2.0.css' %}" rel="stylesheet">
+  <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'css/tiny-slider.css' %}" rel="stylesheet">
+  <link href="{% static 'css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/0014ac2641.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+
+  <script type="text/javascript">
+    $(function(){
+      $(window).resize(function() {    // Optional: if you want to detect when the window is resized;
+          processBodies($(window).width());
+      });
+      function processBodies(width) {
+          if(width > 768) {
+              $('.accordion-body').collapse('show');
+          }
+          else {
+              $('.accordion-body').collapse('hide');
+          }
+      }
+      processBodies($(window).width());
+    });
+  </script>
+
+  <script type="text/javascript">
+    function getToday() {
+        let today = new Date();
+        let d1 = today.getDate();
+        let m1 = today.getMonth()+1; //January is 0!
+        let y1 = today.getFullYear();
+
+        if(d1<10) {
+            d1 = '0'+d1
+        } 
+
+        if(m1<10) {
+            m1 = '0'+m1
+        } 
+
+        today = y1 + '-' + m1 + '-' + d1;
+        console.log(today);
+        document.getElementById("checkInDate").value = today;
+        };
+
+    function getTomarrow(){
+        let tomarrow = new Date();
+        let d2 = tomarrow.getDate()+1;
+        let m2 = tomarrow.getMonth()+1; //January is 0!
+        let y2 = tomarrow.getFullYear();
+
+        if(d2<10) {
+            d2 = '0'+d2
+        } 
+
+        if(m2<10) {
+            m2 = '0'+m2
+        } 
+
+        tomarrow = y2 + '-' + m2 + '-' + d2;
+        console.log(tomarrow);
+        document.getElementById("checkOutDate").value = tomarrow;
+        
+    
+        };
+        
+    window.onload = function() {
+        getToday();
+        getTomarrow();
+    };
+
+  </script> 
+</head>
+
+<body>
+  <!--logo 上導覽列-->
+  {% include 'headerbar.html' %}
+
+  <div class="maincontent">
+
+    <div class="container-fluid">
+      {% block content %} {% endblock %}
+    </div>
+
+    {% include 'footer.html' %}
+  </div>
+</body>
+</html>

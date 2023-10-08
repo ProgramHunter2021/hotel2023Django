@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/0014ac2641.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+        <title>誠意酒店– Chéngyì Hotel</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">誠意酒店</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="https://lin.ee/XpaDzGD">聊天機器人</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://liff.line.me/1654883656-XqwKRkd4?aid=875zzpvg&utm_source=LINE&utm_medium=ClientOA&utm_campaign=Richmenu">集點卡</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      加值服務
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">高空懸挑無邊際泳池</a></li>
+                      <li><a class="dropdown-item" href="#">360度高空池畔酒吧</a></li>
+                      <li><a class="dropdown-item" href="#">萊特薇庭宴會廳</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://lin.ee/gXfrl0X">專人客服</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        <section id="intro">
+            <div class="container-fluid bg-light p-5">
+            <div class="container">
+              <div class="col-md-12">
+                <h1 class="display-4">全球唯一高空懸挑無邊際泳池、360度環景酒吧！</h1>
+                <p class="lead">台灣「誠意酒店」6大亮點曝光，池畔酒吧還能港灣夕陽</p>
+                <!-- <a class="btn btn-primary btn-lg" href="#" role="button">立即訂房</a> -->
+              </div>
+            </div>
+          </div>
+          </section>
+          <!--介簡的區塊-->
+        <section id="second">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <h3>全台討論度最高的酒店-誠意酒店即將開幕！</h3>
+                    <div class='row'>
+                      <div class='col-md-4 text-center'>
+                        <img src="{% static 'img/bot.png' %}" class="d-block" style="width:100%">
+                        <h5>Chéngyì小編</h5>
+                      </div>
+                      <div class='col-md-8 text-left'>
+                        <p class='lead'>要挑戰台灣最美無邊際泳池寶座</p>
+                        <p>斥資近10億元，台灣首見的城市度假主題的酒店形式，帶你用全新視角看港都。</p>
+                        <p>山煙渺渺的水庫湖景無限延伸，夜晚，欣賞如梵谷名畫「隆河上的星空」般的夜色，享受極致的舒適與自然恬靜的愜意悠閒</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--相片的區塊-->
+    <section id='latest'>       
+        <div class="container">
+        <div class='row'>
+        <div class='col-md-12 text-center'>
+            <h3>相關行程</h3>
+            <!--第1張相片-->
+          <div class='row'>
+            <div class='col-md-4 text-left'>
+                <div class='outer'>
+                  <a href='single.html'>
+                    <div class='upper'>
+                    <img src="{% static 'img/room-01.jpg' %}"  class="d-block" style="width:100%">
+                    </div>
+                    <div class='lower'>
+                      <h3>經典和式雙人床</h3>
+                      <span>尚有空房</span>
+                      <h4>優惠價2,375元/晚</h4>
+                      <span><i class="fas fa-map-marker-alt"></i> 高雄市楠梓區</span><br>
+                      <span><i class="far fa-clock"></i> Nov 03, 2022 08:00PM</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!--第2張相片-->
+            <div class='col-md-4 text-left'>
+                <div class='outer'>
+                  <a href='single.html'>
+                    <div class='upper'>
+                    <img src="{% static 'img/room-02.jpg' %}" class="d-block" style="width:100%">
+                    </div>
+                    <div class='lower'>
+                      <h3>豪華房城景單人房</h3>
+                      <span>尚有空房</span>
+                      <h4>優惠價1,500元/晚</h4>
+                      <span><i class="fas fa-map-marker-alt"></i> 高雄市楠梓區</span><br>
+                      <span><i class="far fa-clock"></i> Nov 03, 2022 08:00PM</span>
+                    </div>
+                  </a>
+                </div>
+           </div>
+          <!--第3張相片-->
+          
+            <div class='col-md-4 text-left'>
+                <div class='outer'>
+                  <a href='single.html'>
+                    <div class='upper'>
+                    <img src="{% static 'img/room-03.jpg' %}" class="d-block" style="width:100%">
+                    </div>
+                    <div class='lower'>
+                      <h3>尊爵高樓海景套房</h3>
+                      <span>會員專屬</span>
+                      <h4>費用請洽現場服務人員</h4>
+                      <span><i class="fas fa-map-marker-alt"></i> 高雄市楠梓區</span><br>
+                      <span><i class="far fa-clock"></i> Nov 03, 2022 08:00PM</span>
+                    </div>
+                  </a>
+                </div>
+            </div>
+            
+            </section>
+             <!--形象廣告banner輪播-->
+             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'img/banner-01.jpg' %}" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>SPRING庭宴會廳</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'img/banner-02.jpg' %}" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>360度高空池畔酒吧</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'img/banner-03.jpg' %}" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>高空懸挑無邊際泳池</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <!--Email區塊-->
+    <section id='email'>
+        <div class="container">
+          <div class='row'>
+          <div class='col-md-8 offset-md-2 text-center'>
+            <h3>快點成為我們獨家的會員，訂閱Email獲得最新住房優惠吧!</h3>
+          </div>
+          </div>
+          <div class='row'>
+          <div class='col-md-8 offset-md-2 text-left'>		
+          <p>最新會員獨家優惠立刻通知你！</p>        		  	
+            <div class="input-group input-group-lg">
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="你的電郵">
+          </div>
+          <a class="btn btn-primary btn-lg" href="#" role="button">提交</a>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!--footer的區塊-->
+    <footer> 
+        <div class="container">
+          <div class='row'>
+          <div class='col-md-4 text-left'>
+            <img src="{% static 'img/logo.jpg' %}" width='25%'>
+            <p>Chéngyì小編 - 台灣最好玩最好吃行程。生活悶悶地？加入我們一起GO啦！</p>
+          </div>
+          <div class='col-md-4 text-left'>
+            <h4>連結</h4>
+            <ul>
+                <li><a href='index.html'>主頁</a></li>
+                <li><a href='#'>相關行程</a></li>
+            </ul>
+            <ul>
+                <li><a href='#'>常見問題</a></li>
+                <li><a href='https://lin.ee/gXfrl0X'>聯絡我們</a></li>
+            </ul>             
+          </div>
+          <div class='col-md-4 text-left'>
+            <h4>聯絡我們</h4>
+            <p>高雄市楠梓區<br>
+             Phone: 07-333-3999<br>
+             E-Mail: <a href='mailto:xxx@gmail.com'>xxx@gmail.com</a>
+              </p>
+          </div>
+          </div>
+        </div>          
+      
+      </footer>
+    </body>
+</html>
