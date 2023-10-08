@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # SECURITY WARNING: keep the secret key used in production secret!
 LINE_CHANNEL_ACCESS_TOKEN = 'oM/WrI1Q+PfZtofamXnfOSXIcFJAKLsr+Stw8/sXyoeZoMm3cOvBYjK4NG4P9Cnfv57/3EXlTAQJTsL0/gG+6TEoO1NfPLWX7cFhtJKtFSnB/yBBvlINNxJbRN/AZGhCREW7VKhIK8K5iBPOjupHvgdB04t89/1O/w1cDnyilFU='
@@ -86,21 +87,32 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HOTEL.wsgi:application'
+WSGI_APPLICATION = 'HOTEL.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',  #PostgreSQL
+#         'NAME': 'hoteldb',  #資料庫名稱
+#         'USER': 'postgres',  #資料庫帳號
+#         'PASSWORD': 'admin',  #資料庫密碼
+#         'HOST': 'localhost',  #Server(伺服器)位址
+#         'PORT': '5432'  #PostgreSQL Port號
+#     }
+# }
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',  #PostgreSQL
-        'NAME': 'hoteldb',  #資料庫名稱
-        'USER': 'postgres',  #資料庫帳號
-        'PASSWORD': 'admin',  #資料庫密碼
-        'HOST': 'localhost',  #Server(伺服器)位址
-        'PORT': '5432'  #PostgreSQL Port號
-    }
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default='postgresql://hoteldb_ds8f_user:0Dib1T5WnhwkIx0KNttiNquYMmca2vbu@dpg-ckh43ksldqrs73fv3jrg-a.singapore-postgres.render.com/hoteldb_ds8f',
+        conn_max_age=600
+    )
 }
 
 
