@@ -458,7 +458,8 @@ def List_Booking_recoder(uid):
                 "color": "#D5A07E"
             }
         ]
-
+        print(bookeddetails[0].booked_date.strftime('%Y-%m-%d'))
+        print(datetime.today().strftime('%Y-%m-%d'))
         if (bookeddetails[0].booked_date.strftime('%Y-%m-%d') == datetime.today().strftime('%Y-%m-%d')):
             footer_btn.insert(0, {
                 "type": "button",
