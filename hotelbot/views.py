@@ -325,7 +325,7 @@ def callback(request):
                                                             QuickReplyButton(
                                                                 action=URIAction(
                                                                     label="輸入人數",
-                                                                    uri='line://oaMessage/{bid}/?{message}'.format(bid='@774ulqej',message=quote(f"{chId}/輸入人數:")), # ((改))
+                                                                    uri='line://oaMessage/{bid}/?{message}'.format(bid='@875zzpvg',message=quote(f"{chId}/輸入人數:")), # ((改))
                                                                 )
                                                             )
                                                         ]
