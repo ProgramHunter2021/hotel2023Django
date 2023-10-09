@@ -21,7 +21,7 @@ class MyDateTime:
 
     # 取得天數
     def comprise_between(self, bound_my_datetime):
-        return abs((bound_my_datetime.main_datetime - self.main_datetime).days)
+        return abs((bound_my_datetime.main_datetime - self.main_datetime).days)+1
     
     print(comprise_between)
 
@@ -29,7 +29,7 @@ class MyDateTime:
     def comprise_everyday(self, bound_my_datetime):
         everyday_list=[]
         for day_counter in range(self.comprise_between(bound_my_datetime)):
-            curr_datetime = self.add_day(day_counter)
+            curr_datetime = self.add_day(day_counter)+1
             everyday_list.append(curr_datetime.date())
         return everyday_list
 
