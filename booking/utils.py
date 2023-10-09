@@ -29,7 +29,7 @@ class MyDateTime:
     def comprise_everyday(self, bound_my_datetime):
         everyday_list=[]
         for day_counter in range(self.comprise_between(bound_my_datetime)):
-            curr_datetime = self.add_day(day_counter)+1
+            curr_datetime = self.add_day(day_counter) + datetime.timedelta(days=+1)
             everyday_list.append(curr_datetime.date())
         return everyday_list
 
