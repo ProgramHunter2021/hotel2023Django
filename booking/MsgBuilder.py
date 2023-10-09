@@ -10,7 +10,7 @@ import random
 import urllib
 
 
-def PreBookingProcessMsg(uid):
+def     PreBookingProcessMsg(uid):
     user = Users.objects.filter(lineid=uid).first()
     bodycontents = [
         {
@@ -88,7 +88,7 @@ def PreBookingProcessMsg(uid):
                         "action": {
                             "type": "uri",
                             "label": "確認開始訂房",
-                            "uri": "https://liff.line.me/1657480937-b6p5YA96"
+                            "uri": "https://liff.line.me/2001073277-POyXgxDX"
                         },
                         "color": "#D5A07E"
                     }, 
@@ -99,7 +99,7 @@ def PreBookingProcessMsg(uid):
                         "action": {
                             "type": "uri",
                             "label": "修改個人資訊",
-                            "uri": "https://liff.line.me/1657480937-XvW4LEMa"
+                            "uri": "https://liff.line.me/2001073277-xW2DpBdD"
                         },
                         "color": "#D5A07E"
                     }
@@ -432,7 +432,7 @@ def List_Booking_recoder(uid):
         msg_addcomment = f'[添加備註|{record.o_id}]:'
         #msg_addcomment = msg_addcomment.encode(encoding = 'UTF-8', errors = 'NONE')
         msg_addcomment = urllib.parse.quote(msg_addcomment)
-        str_uri = f'https://line.me/R/oaMessage/@774ulqej/?{msg_addcomment}'
+        str_uri = f'https://line.me/R/oaMessage/@875zzpvg/?{msg_addcomment}'
 
         footer_btn = [
             {
@@ -701,7 +701,7 @@ def Pre_CheckIn_Msg(uid):
                         "action": {
                             "type": "uri",
                             "label": "確認入住",
-                            "uri": "https://liff.line.me/1657480937-9dK2QgZO"
+                            "uri": "https://liff.line.me/2001073277-aY7JzpBJ"
                         },
                         "color": "#D5A07E"
                     },
@@ -911,7 +911,7 @@ def RoomServiceMsg(uid):
     else:
         msg_addcomment = f'[其他客房服務:{room.r_id}]:'
         msg_addcomment = urllib.parse.quote(msg_addcomment)
-        str_uri = f'https://line.me/R/oaMessage/@774ulqej/?{msg_addcomment}'
+        str_uri = f'https://line.me/R/oaMessage/@875zzpvg/?{msg_addcomment}'
 
 
         flex_message = FlexSendMessage(
