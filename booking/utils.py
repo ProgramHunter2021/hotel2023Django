@@ -21,7 +21,7 @@ class MyDateTime:
 
     # 取得天數
     def comprise_between(self, bound_my_datetime):
-        return abs((bound_my_datetime.main_datetime - self.main_datetime).days)+2
+        return abs((bound_my_datetime.main_datetime - self.main_datetime).days)
     
     print(comprise_between)
 
