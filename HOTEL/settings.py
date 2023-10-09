@@ -15,8 +15,8 @@ import os
 import dj_database_url
 
 # SECURITY WARNING: keep the secret key used in production secret!
-LINE_CHANNEL_ACCESS_TOKEN = '8Sgk4biw94qWpgqmyy6bWKflkxM19gK9T4bADCefoQbPXU1LszDIwqS2xO82Bk7sHA1/bdRet4VSMhtOSfrgLmLd//ie31xVFTH7Jg3+UzQYs9Oqd+l8GOerxdlCcRoLsxPTxjZexdjLOGcK19gijgdB04t89/1O/w1cDnyilFU='
-LINE_CHANNEL_SECRET = 'd724da36d91a41040b2937792edfaf3e'
+LINE_CHANNEL_ACCESS_TOKEN = 'WSIpKQI3MkKwdndQITzftukdNPE3vK3cEi8ovJqibU4URoEvc0AdlYtePE3hOKbHTSc3JIqIS+f+VtDHsz9giBFkrzPCFoTMZN5mSOeo+rEbKphmDPk5RvSP+sAy3U1ByDR1FSafOr/RIVo8oygfkAdB04t89/1O/w1cDnyilFU='
+LINE_CHANNEL_SECRET = 'c296bfe109d90b2729e95bf69973369e'
 
 PAY_API_URL = 'https://sandbox-api-pay.line.me/v2/payments/request'   #測試
 CONFIRM_API_URL = 'https://sandbox-api-pay.line.me/v2/payments/{}/confirm'    #測試
