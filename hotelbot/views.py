@@ -265,8 +265,8 @@ def callback(request):
                     strdata = event.postback.data.replace('action=BookRoomType&','')
                     data = ast.literal_eval(strdata)
                     print(datetime.strptime(data['from'], '%Y-%m-%d'))
-                    print(datetime.today()+timedelta(days=+1))
-                    if (datetime.strptime(data['from'], '%Y-%m-%d')<datetime.today()+timedelta(days=+1)):
+                    print(datetime.today()+timedelta(days=+0))
+                    if (datetime.strptime(data['from'], '%Y-%m-%d')<datetime.today()+timedelta(days=+0)):
                         message.append(TextSendMessage(text='連接已經失效,請重新操作訂房流程.'))
                     else :
                         # Get_ConfirmBookingInfo_Msg(uid, data)
