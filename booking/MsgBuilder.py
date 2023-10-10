@@ -10,7 +10,7 @@ import random
 import urllib
 
 
-def     PreBookingProcessMsg(uid):
+def PreBookingProcessMsg(uid):
     user = Users.objects.filter(lineid=uid).first()
     bodycontents = [
         {
@@ -587,8 +587,8 @@ def List_Booking_recoder(uid):
         
 def Pre_CheckIn_Msg(uid):
     user = Users.objects.filter(lineid=uid).first()
-    today = datetime.today()
-    # date = datetime(today.year, today.month, today.day, 0,0,0)
+    # today = datetime.today()
+    date = datetime(today.year, today.month, today.day, 0,0,0)
     date = datetime.now()
     print(date)
     booked_details = BookingRoom.objects.filter(order__o_user = user, booked_date = date).all()

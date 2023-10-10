@@ -21,19 +21,15 @@ class MyDateTime:
 
     # 取得天數
     def comprise_between(self, bound_my_datetime):
-        return abs((bound_my_datetime.main_datetime - self.main_datetime).days)+1
-    
-    print(comprise_between)
+        return abs((bound_my_datetime.main_datetime - self.main_datetime).days)
 
     # 取得整列, 開始日期到結束日期的所有日期, 不包含結束日期
     def comprise_everyday(self, bound_my_datetime):
         everyday_list=[]
         for day_counter in range(self.comprise_between(bound_my_datetime)):
-            curr_datetime = self.add_day(day_counter) + datetime.timedelta(days=+1)
+            curr_datetime = self.add_day(day_counter)
             everyday_list.append(curr_datetime.date())
         return everyday_list
-
-    print(comprise_everyday)
 
     def __str__(self):
         return str(self.main_datetime)
